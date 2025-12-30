@@ -4,7 +4,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import { isRTL } from "@/i18n/config";
+import { isRTL, type Locale } from "@/i18n/config";
 import "../globals.css";
 import { ThemeProvider } from "@/Components/ThemeProvider";
 
@@ -33,7 +33,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
 
@@ -41,7 +41,7 @@ export default async function LocaleLayout({
   // side is the easiest way to get started
   const messages = await getMessages();
 
-  const dir = isRTL(locale as any) ? "rtl" : "ltr";
+  const dir = isRTL(locale as Locale) ? "rtl" : "ltr";
 
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
@@ -62,4 +62,3 @@ export default async function LocaleLayout({
     </html>
   );
 }
-

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { Button } from "@/Components/Shadcn/button";
 import { GoogleSignInButton } from "./GoogleSignInButton";
 import { SocialButton } from "./SocialButton";
 import {
@@ -47,13 +48,15 @@ export function SocialAuthSection({
       </div>
 
       <div className="flex items-center justify-center">
-        <button
+        <Button
           type="button"
+          variant="ghost"
+          size="sm"
           onClick={toggleOtherOptions}
-          className="px-3 text-xs text-muted-foreground underline-offset-4 hover:underline cursor-pointer transition-colors"
+          className="px-3 text-xs text-muted-foreground underline decoration-dotted underline-offset-4 hover:text-foreground"
         >
           {translations.otherOptions}
-        </button>
+        </Button>
       </div>
 
       <div
@@ -67,6 +70,7 @@ export function SocialAuthSection({
             key={provider.name}
             provider={provider}
             size="sm"
+            className="w-full"
             onClick={() => onSocialSignIn?.(provider.name)}
           />
         ))}

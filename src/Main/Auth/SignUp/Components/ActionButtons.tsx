@@ -1,5 +1,5 @@
 import { Button } from "@/Components/Shadcn/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { type SignUpTranslations } from "../i18n";
 
@@ -23,8 +23,8 @@ export function ActionButtons({
         onClick={onContinue}
         className="w-full bg-black text-white hover:bg-black/90 dark:bg-white dark:text-black dark:hover:bg-white/90"
       >
-        <ArrowLeft className={cn("size-4", rtl ? "rotate-180" : "")} />
         <span>{translations.continue}</span>
+        <ArrowRight className={cn("size-4", rtl ? "rotate-180" : "")} />
       </Button>
 
       <Button

@@ -23,9 +23,9 @@ export const PRIMARY_SOCIAL_PROVIDERS: SocialProvider[] = [
 ];
 
 export const SECONDARY_SOCIAL_PROVIDERS: SocialProvider[] = [
-  { name: "Discord", icon: MessageCircle },
-  { name: "Gitlab", icon: Code },
-  { name: "Github", icon: Github },
-  { name: "Facebook", icon: Facebook },
-  { name: "Microsoft", icon: Building2 },
+  { name: "Microsoft", icon: Building2, label: "Microsoft" },
+  { name: "Facebook", icon: Facebook, label: "Facebook" },
+  { name: "Github", icon: Github, label: "Github" },
+  { name: "Gitlab", icon: Code, label: "Gitlab" },
+  { name: "Discord", icon: MessageCircle, label: "Discord" },
 ];

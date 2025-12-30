@@ -17,20 +17,27 @@ export function SocialButton({
 }: SocialButtonProps) {
   const IconComponent = provider.icon;
   const sizeClasses = {
-    sm: "h-10",
+    sm: "h-10 px-3",
     md: "h-12",
     lg: "h-14",
   };
 
+  // For small size, show text label if available, otherwise show icon
+  const showText = size === "sm" && provider.label;
+
   return (
     <Button
       variant="secondary"
-      size="icon"
+      size={showText ? "default" : "icon"}
       onClick={onClick}
       className={cn(sizeClasses[size], className)}
       title={provider.name}
     >
-      {IconComponent ? (
+      {showText ? (
+        <span className="text-xs font-medium">
+          {provider.label || provider.name}
+        </span>
+      ) : IconComponent ? (
         <IconComponent className={cn(size === "sm" ? "size-4" : "size-5")} />
       ) : (
         provider.label && (

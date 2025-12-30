@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { type ReactNode } from "react";
 import { Geist, Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
@@ -27,7 +28,7 @@ export default async function LocaleLayout({
   children,
   params,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
@@ -55,6 +56,7 @@ export default async function LocaleLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages}>
+            {/* @ts-expect-error - React type conflict between React 19 and next-intl */}
             {children}
           </NextIntlClientProvider>
         </ThemeProvider>

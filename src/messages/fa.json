@@ -1,0 +1,15 @@
+{
+  "common": {
+    "welcome": "خوش آمدید",
+    "signIn": "ورود",
+    "signUp": "ثبت نام",
+    "email": "ایمیل",
+    "password": "رمز عبور",
+    "rememberMe": "مرا به خاطر بسپار",
+    "forgotPassword": "رمز عبور را فراموش کرده‌اید؟",
+    "dontHaveAccount": "حساب کاربری ندارید؟",
+    "alreadyHaveAccount": "قبلاً حساب کاربری دارید؟",
+    "language": "زبان"
+  }
+}
+

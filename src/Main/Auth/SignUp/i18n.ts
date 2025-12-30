@@ -3,7 +3,7 @@ import { type Locale } from "@/i18n/config";
 
 const translations = {
   en: {
-    welcome: "Welcome",
+    welcome: "Welcome Back",
     welcomeSubtitle: "Sign in to your account to continue",
     signInWithGoogle: "Continue with Google",
     otherOptions: "More options",

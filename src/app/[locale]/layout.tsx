@@ -56,7 +56,6 @@ export default async function LocaleLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages}>
-            {/* @ts-expect-error - React type conflict between React 19 and next-intl */}
             {children}
           </NextIntlClientProvider>
         </ThemeProvider>

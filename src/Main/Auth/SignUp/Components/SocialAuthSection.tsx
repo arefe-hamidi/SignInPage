@@ -61,8 +61,10 @@ export function SocialAuthSection({
 
       <div
         className={cn(
-          "grid grid-cols-5 gap-2 transition-all duration-300 ease-in-out overflow-hidden",
-          showOtherOptions ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
+          "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 transition-all duration-300 ease-in-out overflow-hidden",
+          showOtherOptions
+            ? "max-h-36 sm:max-h-24 md:max-h-20 opacity-100"
+            : "max-h-0 opacity-0"
         )}
       >
         {SECONDARY_SOCIAL_PROVIDERS.map((provider) => (

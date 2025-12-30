@@ -42,7 +42,7 @@ export function SignUp() {
   return (
     <Card className="w-full rounded-2xl border bg-card p-8 shadow-lg">
       <div className="flex flex-col gap-6">
-        <SignUpHeader translations={translations} rtl={rtl} />
+        <SignUpHeader translations={translations} />
 
         <SocialAuthSection
           translations={translations}

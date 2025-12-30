@@ -3,7 +3,6 @@ import { Input } from "@/Components/Shadcn/input";
 import { Label } from "@/Components/Shadcn/label";
 import { Separator } from "@/Components/Shadcn/separator";
 import { Mail, Phone } from "lucide-react";
-import { cn } from "@/lib/utils";
 import { type SignUpTranslations } from "../i18n";
 
 interface EmailAuthSectionProps {
@@ -31,31 +30,29 @@ export function EmailAuthSection({
         <Separator className="flex-1" />
       </div>
 
-      <div className="flex items-center gap-2 rounded-lg border border-border bg-background p-1">
+      <div className="relative flex items-center gap-1 rounded-full bg-muted p-1 w-fit mx-auto border border-border">
         <Button
           variant="ghost"
-          size="sm"
+          size="lg"
           onClick={() => onMethodChange("email")}
-          className={cn(
-            "flex-1 h-8 text-xs font-medium transition-all gap-1.5",
+          className={
             loginMethod === "email"
-              ? "bg-primary text-primary-foreground shadow-sm"
-              : "text-muted-foreground hover:text-foreground"
-          )}
+              ? "bg-white text-foreground font-semibold shadow-sm hover:bg-white dark:bg-black dark:text-white dark:hover:bg-black"
+              : "text-muted-foreground hover:text-foreground hover:bg-transparent"
+          }
         >
           <Mail className="size-3.5" />
           {translations.email}
         </Button>
         <Button
           variant="ghost"
-          size="sm"
+          size="lg"
           onClick={() => onMethodChange("phone")}
-          className={cn(
-            "flex-1 h-8 text-xs font-medium transition-all gap-1.5",
+          className={
             loginMethod === "phone"
-              ? "bg-primary text-primary-foreground shadow-sm"
-              : "text-muted-foreground hover:text-foreground"
-          )}
+              ? "bg-white text-foreground font-semibold shadow-sm hover:bg-white dark:bg-black dark:text-white dark:hover:bg-black"
+              : "text-muted-foreground hover:text-foreground hover:bg-transparent"
+          }
         >
           <Phone className="size-3.5" />
           {translations.phone}

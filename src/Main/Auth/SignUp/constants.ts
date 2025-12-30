@@ -4,6 +4,9 @@ import {
   Code,
   Github,
   Facebook,
+  X,
+  Linkedin,
+  AppleIcon,
   type LucideIcon,
 } from "lucide-react";
 
@@ -14,9 +17,9 @@ export interface SocialProvider {
 }
 
 export const PRIMARY_SOCIAL_PROVIDERS: SocialProvider[] = [
-  { name: "X", icon: MessageCircle, label: "X" },
-  { name: "LinkedIn", icon: Building2, label: "in" },
-  { name: "Apple", icon: null, label: "🍎" },
+  { name: "X", icon: X },
+  { name: "LinkedIn", icon: Linkedin },
+  { name: "Apple", icon: AppleIcon },
 ];
 
 export const SECONDARY_SOCIAL_PROVIDERS: SocialProvider[] = [

@@ -1,4 +1,6 @@
-import { Separator } from "@/Components/Shadcn/separator";
+"use client";
+
+import * as React from "react";
 import { GoogleSignInButton } from "./GoogleSignInButton";
 import { SocialButton } from "./SocialButton";
 import {
@@ -6,6 +8,7 @@ import {
   SECONDARY_SOCIAL_PROVIDERS,
 } from "../constants";
 import { type SignUpTranslations } from "../i18n";
+import { cn } from "@/lib/utils";
 
 interface SocialAuthSectionProps {
   translations: SignUpTranslations;
@@ -18,6 +21,12 @@ export function SocialAuthSection({
   onGoogleSignIn,
   onSocialSignIn,
 }: SocialAuthSectionProps) {
+  const [showOtherOptions, setShowOtherOptions] = React.useState(false);
+
+  const toggleOtherOptions = () => {
+    setShowOtherOptions((prev) => !prev);
+  };
+
   return (
     <>
       <GoogleSignInButton
@@ -37,15 +46,22 @@ export function SocialAuthSection({
         ))}
       </div>
 
-      <div className="relative flex items-center">
-        <Separator className="flex-1" />
-        <span className="px-3 text-xs text-muted-foreground">
+      <div className="flex items-center justify-center">
+        <button
+          type="button"
+          onClick={toggleOtherOptions}
+          className="px-3 text-xs text-muted-foreground underline-offset-4 hover:underline cursor-pointer transition-colors"
+        >
           {translations.otherOptions}
-        </span>
-        <Separator className="flex-1" />
+        </button>
       </div>
 
-      <div className="grid grid-cols-5 gap-2">
+      <div
+        className={cn(
+          "grid grid-cols-5 gap-2 transition-all duration-300 ease-in-out overflow-hidden",
+          showOtherOptions ? "max-h-20 opacity-100" : "max-h-0 opacity-0"
+        )}
+      >
         {SECONDARY_SOCIAL_PROVIDERS.map((provider) => (
           <SocialButton
             key={provider.name}

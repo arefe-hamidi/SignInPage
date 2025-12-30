@@ -27,7 +27,7 @@ export function SocialButton({
       variant="secondary"
       size="icon"
       onClick={onClick}
-      className={cn("bg-secondary/50", sizeClasses[size], className)}
+      className={cn(sizeClasses[size], className)}
       title={provider.name}
     >
       {IconComponent ? (

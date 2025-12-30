@@ -5,9 +5,9 @@ const translations = {
   en: {
     welcome: "Welcome",
     welcomeSubtitle: "Sign in to your account to continue",
-    signInWithGoogle: "Sign in with Google",
-    otherOptions: "Other options",
-    orSignInWith: "Or sign in with",
+    signInWithGoogle: "Continue with Google",
+    otherOptions: "More options",
+    orSignInWith: "Or continue with",
     email: "Email",
     phone: "Phone",
     emailAddress: "Email address",

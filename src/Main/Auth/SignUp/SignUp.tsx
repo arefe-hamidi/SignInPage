@@ -9,6 +9,7 @@ import { SignUpHeader } from "./Components/SignUpHeader";
 import { SocialAuthSection } from "./Components/SocialAuthSection";
 import { EmailAuthSection } from "./Components/EmailAuthSection";
 import { ActionButtons } from "./Components/ActionButtons";
+import { TermsAndPrivacy } from "./Components/TermsAndPrivacy";
 
 export function SignUp() {
   const translations = useSignUpTranslations();
@@ -64,6 +65,8 @@ export function SignUp() {
           onContinue={handleContinue}
           onGuestContinue={handleGuestContinue}
         />
+
+        <TermsAndPrivacy translations={translations} />
       </div>
     </Card>
   );
